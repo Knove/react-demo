@@ -1,20 +1,12 @@
 {
-  "name": "ai-platform",
+  "name": "react-demo",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.19.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0-rc.1",
-    "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
-    "redux-saga": "^1.1.3"
-  },
   "scripts": {
     "build": "webpack --config ./config/webpack.prod.config.js",
     "start": "webpack-dev-server --inline --config ./config/webpack.dev.config.js",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "eslint": "eslint --ignore-path .gitignore ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,21 +23,47 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0-rc.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.1.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "cssnano": "^4.1.10",
+    "mini-css-extract-plugin": "^0.8.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier-eslint": "^9.0.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "cssnano": "^4.1.10",
-    "html-webpack-plugin": "^3.2.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "lib-flexible": "^0.3.2",
-    "mini-css-extract-plugin": "^0.8.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.23",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-cssnext": "^3.1.0",
@@ -53,11 +71,6 @@
     "postcss-px-to-viewport": "^1.1.1",
     "postcss-viewport-units": "^0.1.6",
     "postcss-write-svg": "^3.0.1",
-    "style-loader": "^1.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "style-loader": "^1.0.0"
   }
 }

@@ -14,21 +14,21 @@ export default function Index() {
   const getList = useCallback(() => {
     dispatch({
       type: constatns.GET_INFO,
-      action: {}
+      action: {},
     });
   }, [dispatch]);
-
 
   useEffect(() => {
     getList();
   }, [getList]);
 
-
   return (
     <>
       <div className="main">
         {/* <Hello /> */}
-        {utils.getText()}{gameList.length}
+        {utils.getText()}
+
+        {gameList.length}
       </div>
     </>
   );
