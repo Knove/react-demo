@@ -22,6 +22,7 @@ module.exports = {
       },
     },
   },
+  parser: "babel-eslint",
   // 解析器选项
   parserOptions: {
     // 启用 ES6 语法支持

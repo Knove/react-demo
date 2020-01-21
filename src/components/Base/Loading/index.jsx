@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { Spin } from 'antd';
+
 import './index.less';
 
-export default function Hello(props) {
+export default function Loading(props) {
   return (
     <>
-      <div className="main">Hello!</div>
+      <Spin />
     </>
   );
 }
