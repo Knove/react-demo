@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import constants from './constants';
 import URL from '../config/config';
-import util from '../utils'
+import util from '../utils';
 
 /**
  * @description 获取首页游戏列表
@@ -12,22 +12,24 @@ function* getInfo(action) {
   try {
     const res = yield axios.get(URL.HOME, {
       params: {
-        requestInterest: 'xiaoAi'
-      }
+        requestInterest: 'xiaoAi',
+      },
     });
     const { code, data, msg } = res.data;
     if (code === 200) {
-      const list = data.blocks[0].list;
-      
-      const gameList = list.filter(item => item.bindGameInfo).map(item => {
-        const { bindGameInfo, picture } = item;
-        bindGameInfo.bgBanner = picture
-        return bindGameInfo
-      })
+      const { list } = data.blocks[0];
+
+      const gameList = list
+        .filter(item => item.bindGameInfo)
+        .map(item => {
+          const { bindGameInfo, picture } = item;
+          bindGameInfo.bgBanner = picture;
+          return bindGameInfo;
+        });
       gameList.forEach(item => {
-        item.iconLink = `//t1.g.mi.com/thumbnail/webp/w120/${item.sIcon}`
-        item.bgLink = `//t1.g.mi.com/thumbnail/webp/w700/${item.bgBanner}`
-      })
+        item.iconLink = `//t1.g.mi.com/thumbnail/webp/w120/${item.sIcon}`;
+        item.bgLink = `//t1.g.mi.com/thumbnail/webp/w700/${item.bgBanner}`;
+      });
       yield put({ type: constants.MERGE_DATA, payload: { gameList } });
     } else {
       console.error('获取首页游戏列表失败', msg);
@@ -50,7 +52,7 @@ function* getUserInfo(action) {
   }
   try {
     const res = yield axios.get(URL.USER_INFO, {
-      params: { serviceToken }
+      params: { serviceToken },
     });
     const { code, data, msg } = res.data;
     if (code === 200) {

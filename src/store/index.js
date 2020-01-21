@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga'
+import createSagaMiddleware from 'redux-saga';
 
-import saga from './saga'
+import saga from './saga';
 
 const INITIAL_STATE = {
   userInfo: {}, // 用户信息
-  gameList: [] // 游戏列表
+  gameList: [], // 游戏列表
 };
 
 function courses(state = INITIAL_STATE, action) {
@@ -19,10 +19,10 @@ function courses(state = INITIAL_STATE, action) {
   }
 }
 // create the saga middleware
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(courses, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(saga)
+sagaMiddleware.run(saga);
 
 export default store;
