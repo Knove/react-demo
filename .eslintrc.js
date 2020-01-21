@@ -36,6 +36,11 @@ module.exports = {
   },
   plugins: [],
   settings: {
+    "import/resolver": {
+      "webpack": {
+          "config": "config/webpack.config.js"
+      }
+    }
   },
   // 额外的规则或覆盖默认的规则
   rules: {

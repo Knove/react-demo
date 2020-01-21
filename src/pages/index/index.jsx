@@ -1,15 +1,16 @@
 import React, { useEffect, useCallback } from 'react';
+import { Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-// import Hello from '@/components/Hello/index.jsx'
+import { useHistory } from 'react-router-dom';
 
 import constatns from '../../store/constants';
-import utils from '@/utils.js';
+import utils from '@/utils';
 import './index.less';
 
 export default function Index() {
   const gameList = useSelector(state => state.gameList);
   const dispatch = useDispatch();
-
+  const history = useHistory();
   // 获取列表
   const getList = useCallback(() => {
     dispatch({
@@ -18,6 +19,9 @@ export default function Index() {
     });
   }, [dispatch]);
 
+  const route = () => {
+    history.push('/user');
+  };
   useEffect(() => {
     getList();
   }, [getList]);
@@ -25,9 +29,10 @@ export default function Index() {
   return (
     <>
       <div className="main">
-        {/* <Hello /> */}
+        router To user Page
+        <Button onClick={route}>go User Page</Button>
+        <br />
         {utils.getText()}
-
         {gameList.length}
       </div>
     </>

@@ -12,7 +12,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: 'js/[name].[chunkhash:8].bundle.js',
-    publicPath: '/game/platform/xiaoai/' // 小爱同学的绝对路径
+    publicPath: '/',
   },
   module: {
     rules: [

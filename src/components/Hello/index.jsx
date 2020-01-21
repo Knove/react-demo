@@ -5,7 +5,9 @@ import './index.less';
 export default function Hello(props) {
   return (
     <>
-      <div className="main" />
+      <div className="main">
+        Hello!
+      </div>
     </>
   );
 }

@@ -1,7 +1,9 @@
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
+
 const path = require('path');
+
 const resolve = dir => path.resolve(__dirname, dir);
 
-console.log(resolve('../src'))
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
@@ -15,10 +17,10 @@ module.exports = {
   },
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
+    extensions: ['.jsx', '.ts', '.tsx', '.js', '.json', '.less'],
     alias: {
-      '@': resolve('../src')
-    }
+      '@': resolve('../src'),
+    },
   },
 
   module: {
@@ -52,4 +54,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new AntdDayjsWebpackPlugin()],
 };
